@@ -1,10 +1,9 @@
 from core.combat import pve
 from core.character import choose_race, choose_class, choose_name
 from core.character import HP_by_class
-from spells.mob_spells import poule_attaque
 from core.map import creer_map, afficher_map, deplacer_joueur
-from spells.mob_spells import dinde_attaque
-from core.mobs import MOBS_SUR_MAP
+from render.console import boucle_console
+from spells.mob_spells import poule_attaque, dinde_attaque
 
 #=====================# CRÉATION DU JOUEUR #======================#
 print("Bonjour, créez votre personnage !") 
@@ -32,32 +31,5 @@ player["pv"] = pve(player["nom"], player["classe"], player["pv"], poule["nom"], 
 dinde = {"nom": "dinde enragée", "pv": 45, "attaque": dinde_attaque}
 player["pv"] = pve(player["nom"], player["classe"], player["pv"], dinde["nom"], dinde["pv"])
 
-#======================# MAP #======================#
-map_data = creer_map()
-MOBS_on_map = MOBS_SUR_MAP
-
-
-
-
-
-
-# ======================
-# BOUCLE PRINCIPALE
-# ======================
-while player["pv"] > 0:
-    afficher_map(map_data)
-    print(f"❤️ PV : {player['pv']}/{player['pv_max']}")
-    direction = input("Déplacez votre personnage (z/q/s/d) ou 'x' pour quitter : ").lower()
-
-    if direction == "x":
-        print("Merci d'avoir joué !")
-        break
-
-    player["pv"] = deplacer_joueur(
-        map_data,
-        direction,
-        player,
-        MOBS_on_map
-    )
-
-print("💀 Fin de l'aventure.")
+#======================# jeu console #======================#
+boucle_console(player)
