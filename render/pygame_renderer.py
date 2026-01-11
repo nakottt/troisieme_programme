@@ -19,7 +19,7 @@ def run_pygame(player, map_data, mobs_on_map):
     screen = pygame.display.set_mode(
         (cols * TILE_SIZE, rows * TILE_SIZE)
     )
-    pygame.display.set_caption("TroisiÃ¨me Programme")
+    pygame.display.set_caption("CPAS Kingdom")
 
     clock = pygame.time.Clock()
 
@@ -27,12 +27,16 @@ def run_pygame(player, map_data, mobs_on_map):
     tiles = {
         "#": load_image(os.path.join(ASSETS_PATH, "tiles", "wall.png")),
         ".": load_image(os.path.join(ASSETS_PATH, "tiles", "ground.png")),
+        "G": load_image(os.path.join(ASSETS_PATH, "mobs", "goblin.png")),
+        "B": load_image(os.path.join(ASSETS_PATH, "mobs", "boss.png")),
     }
 
     player_sprite = load_image(
         os.path.join(ASSETS_PATH, "player", "player.png")
     )
-
+    
+    # ================= MAIN LOOP =================
+    
     running = True
     direction = None
 

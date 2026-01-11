@@ -7,7 +7,7 @@ def creer_map():
         list("#P..GG...#"),
         list("#..##....#"),
         list("#..GG..B.#"),
-        list("#......C#"),
+        list("#.......C#"),
         list("##########")
     ]
 
