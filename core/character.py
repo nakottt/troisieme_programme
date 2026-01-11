@@ -22,9 +22,9 @@ HP_PAR_CLASSE = {
 # ======================
 # CRÉATION DU PERSONNAGE
 # ======================
-print("Bonjour, créez votre personnage !")                                              #
-print(f"\nVotre personnage s'appelle {nom_joueur}, race {race}, classe {classe}.")      # mettre ces lignes dans main.py
-print(f"{nom_joueur} possède {HP_PAR_CLASSE[classe]} points de vie.\n")                 #
+                                             #
+# print(f"\nVotre personnage s'appelle {nom_joueur}, race {race}, classe {classe}.")      # mettre ces lignes dans main.py
+# print(f"{nom_joueur} possède {HP_PAR_CLASSE[classe]} points de vie.\n")                 #
 
 
 def choose_race():   
@@ -48,3 +48,4 @@ def choose_class():
 def choose_name():   
     player_name = input("Entrez le nom de votre personnage : ")
     return player_name
+
