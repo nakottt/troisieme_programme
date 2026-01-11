@@ -16,7 +16,7 @@ def coupret_hit (hp_monstre, nom_joueur):
     return hp_monstre 
 
 def execute (hp_monstre, nom_joueur):
-    degats = random.randint(14,17)
+    degats = random.randint(100,200)
     hp_monstre -= degats
     print (nom_joueur, "inflige", degats, "points de dégats.")
     return hp_monstre 

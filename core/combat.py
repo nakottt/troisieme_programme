@@ -1,5 +1,5 @@
 import time
-from spells.mob_spells import poule_attaque
+from spells.mob_spells import mobs_attackes
 from spells.player_spells import classes_attackes
 
 
@@ -33,6 +33,6 @@ def pve(nom_joueur, classe_joueur, hp_joueur, nom_monstre, hp_monstre):
                  print (f"{nom_joueur} est vaincu ! Game Over.")
                  break
             
-            hp_joueur -= poule_attaque(hp_joueur)
+            hp_joueur -= mobs_attackes(hp_joueur)
     return hp_joueur
         

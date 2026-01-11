@@ -1,5 +1,5 @@
 import random
-from combat import pve
+from core.combat import pve
 
 def creer_map():
     return [
