@@ -34,30 +34,30 @@ player["pv"] = pve(player["nom"], player["classe"], player["pv"], dinde["nom"], 
 
 #======================# MAP #======================#
 map_data = creer_map()
+MOBS_on_map = MOBS_SUR_MAP
 
 
 
 
 
 
+# ======================
+# BOUCLE PRINCIPALE
+# ======================
+while player["pv"] > 0:
+    afficher_map(map_data)
+    print(f"❤️ PV : {player['pv']}/{player['pv_max']}")
+    direction = input("Déplacez votre personnage (z/q/s/d) ou 'x' pour quitter : ").lower()
 
-# # ======================
-# # BOUCLE PRINCIPALE
-# # ======================
-# while joueur["pv"] > 0:
-#     afficher_map(map_data)
-#     print(f"❤️ PV : {joueur['pv']}/{joueur['pv_max']}")
-#     direction = input("Déplacez votre personnage (z/q/s/d) ou 'x' pour quitter : ").lower()
+    if direction == "x":
+        print("Merci d'avoir joué !")
+        break
 
-#     if direction == "x":
-#         print("Merci d'avoir joué !")
-#         break
+    player["pv"] = deplacer_joueur(
+        map_data,
+        direction,
+        player,
+        MOBS_on_map
+    )
 
-#     joueur["pv"] = deplacer_joueur(
-#         map_data,
-#         direction,
-#         joueur,
-#         mobs
-#     )
-
-# print("💀 Fin de l'aventure.")
+print("💀 Fin de l'aventure.")
