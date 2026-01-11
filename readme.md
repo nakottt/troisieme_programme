@@ -6,3 +6,7 @@ Sort :
 py game version graphique 
 
 pip3 install -r requirements.txt
+
+
+
+le bonjour doit être mis dans main.py

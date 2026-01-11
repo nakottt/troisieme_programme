@@ -6,4 +6,4 @@ def poule_attaque(hp_joueur):
     degats = random.randint(10,12)
     hp_joueur -= degats
     print ("La poule picore et inflige", degats, "points de dégats.")
-    return random.randint(8,12)
+    return hp_joueur
