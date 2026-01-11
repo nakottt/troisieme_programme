@@ -3,12 +3,12 @@ from core.combat import pve
 
 def creer_map():
     return [
-        list("##########"),
-        list("#P..GG...#"),
-        list("#..##....#"),
-        list("#..GG..B.#"),
-        list("#.......C#"),
-        list("##########")
+        list("###########"),
+        list("#P..HO....#"),
+        list("#..##.....#"),
+        list("#..TO..B..#"),
+        list("#......GC.#"),
+        list("###########")
     ]
 
 def afficher_map(map_data):
@@ -73,6 +73,33 @@ def deplacer_joueur(map_data, direction, joueur, mobs):
             joueur["pv"],
             boss["nom"],
             boss["pv"]
+        )
+    if case == "H":
+        Goblin = mobs[-2]
+        joueur["pv"] = pve(
+            joueur["nom"],
+            joueur["classe"],
+            joueur["pv"],
+            Goblin["nom"],
+            Goblin["pv"]
+        )
+    if case == "O":
+        Orc = mobs[-2]
+        joueur["pv"] = pve(
+            joueur["nom"],
+            joueur["classe"],
+            joueur["pv"],
+            Orc["nom"],
+            Orc["pv"]
+        )
+    if case == "T":
+        Troll = mobs[-1]
+        joueur["pv"] = pve(
+            joueur["nom"],
+            joueur["classe"],
+            joueur["pv"],
+            Troll["nom"],
+            Troll["pv"]
         )
 
     return joueur["pv"]

@@ -27,8 +27,12 @@ def run_pygame(player, map_data, mobs_on_map):
     tiles = {
         "#": load_image(os.path.join(ASSETS_PATH, "tiles", "wall.png")),
         ".": load_image(os.path.join(ASSETS_PATH, "tiles", "ground.png")),
-        "G": load_image(os.path.join(ASSETS_PATH, "mobs", "goblin.png")),
+        "C": load_image(os.path.join(ASSETS_PATH, "tiles", "center.png")),
+        "G": load_image(os.path.join(ASSETS_PATH, "mobs", "herbe.png")),
         "B": load_image(os.path.join(ASSETS_PATH, "mobs", "boss.png")),
+        "H": load_image(os.path.join(ASSETS_PATH, "mobs", "goblin.png")),
+        "O": load_image(os.path.join(ASSETS_PATH, "mobs", "orc.png")),
+        "T": load_image(os.path.join(ASSETS_PATH, "mobs", "troll.png"))
     }
 
     player_sprite = load_image(
