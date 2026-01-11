@@ -4,32 +4,21 @@ from core.character import HP_by_class
 from spells.mob_spells import poule_attaque
 from core.map import creer_map, afficher_map, deplacer_joueur
 from spells.mob_spells import dinde_attaque
+from core.mobs import MOBS_SUR_MAP
 
-
-#======================
-#CRÉATION DU JOUEUR
-#======================
+#=====================# CRÉATION DU JOUEUR #======================#
 print("Bonjour, créez votre personnage !") 
 
-#======================
-#CHOIX RACE
-#======================
+#====================== #CHOIX RACE #======================#
 race = choose_race()
 
-#======================
-#CHOIX CLASSE
-#======================
+#====================== #CHOIX CLASSE #======================#
 classe = choose_class()
 
-#======================
-#CHOIX NOM
-#======================
+#====================== #CHOIX NOM #======================#
 player_name = choose_name()
 
-# ======================
-# JOUEUR (STRUCTURE UNIQUE)
-# ======================
-
+# ======================# JOUEUR (STRUCTURE UNIQUE) # ======================#
 player = {
     "nom": player_name,
     "classe": classe,
@@ -37,36 +26,20 @@ player = {
     "pv_max": HP_by_class[classe]
 }
 
-# ======================
-# PREMIERS COMBATS SCRIPTÉS
-# ======================
-
+#======================# PREMIERS COMBATS SCRIPTÉS #======================#
 poule = {"nom": "poule sauvage", "pv": 30, "attaque": poule_attaque}
 player["pv"] = pve(player["nom"], player["classe"], player["pv"], poule["nom"], poule["pv"])
-
 dinde = {"nom": "dinde enragée", "pv": 45, "attaque": dinde_attaque}
 player["pv"] = pve(player["nom"], player["classe"], player["pv"], dinde["nom"], dinde["pv"])
 
-
-
-# ======================
-#  MAP
-# ======================
-
+#======================# MAP #======================#
 map_data = creer_map()
 
 
 
 
 
-# # ======================
-# # MOBS DE LA MAP (INDÉPENDANTS DES CLASSES)
-# # ======================
-# mobs = [
-#     {"nom": "Gobelin", "pv": 50, "attaque": poule_attaque},
-#     {"nom": "Orc", "pv": 80, "attaque": poule_attaque},
-#     {"nom": "Troll", "pv": 100, "attaque": poule_attaque}
-# ]
+
 
 # # ======================
 # # BOUCLE PRINCIPALE
