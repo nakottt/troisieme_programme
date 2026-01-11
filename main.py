@@ -2,6 +2,9 @@ from core.combat import pve
 from core.character import choose_race, choose_class, choose_name
 from core.character import HP_by_class
 from spells.mob_spells import poule_attaque
+from core.map import creer_map, afficher_map, deplacer_joueur
+from spells.mob_spells import dinde_attaque
+
 
 #======================
 #CRÉATION DU JOUEUR
@@ -41,40 +44,20 @@ player = {
 poule = {"nom": "poule sauvage", "pv": 30, "attaque": poule_attaque}
 player["pv"] = pve(player["nom"], player["classe"], player["pv"], poule["nom"], poule["pv"])
 
-dinde = {"nom": "dinde enragée", "pv": 45, "attaque": poule_attaque}
+dinde = {"nom": "dinde enragée", "pv": 45, "attaque": dinde_attaque}
 player["pv"] = pve(player["nom"], player["classe"], player["pv"], dinde["nom"], dinde["pv"])
 
 
-# from fight import pve
-# from classes_spells import classes_attackes
-# from map_system import creer_map, afficher_map, deplacer_joueur 
-# from spells import poule_attaque
+
+# ======================
+#  MAP
+# ======================
+
+map_data = creer_map()
 
 
 
-# # ======================
-# # JOUEUR (STRUCTURE UNIQUE)
-# # ======================
-# joueur = {
-#     "nom": nom_joueur,
-#     "classe": classe,
-#     "pv": HP_PAR_CLASSE[classe],
-#     "pv_max": HP_PAR_CLASSE[classe]
-# }
 
-# # ======================
-# # PREMIERS COMBATS SCRIPTÉS
-# # ======================
-# poule = {"nom": "poule sauvage", "pv": 30, "attaque": poule_attaque}
-# joueur["pv"] = pve(joueur["nom"], joueur["classe"], joueur["pv"], poule["nom"], poule["pv"])
-
-# dinde = {"nom": "dinde enragée", "pv": 45, "attaque": poule_attaque}
-# joueur["pv"] = pve(joueur["nom"], joueur["classe"], joueur["pv"], dinde["nom"], dinde["pv"])
-
-# # ======================
-# # MAP
-# # ======================
-# map_data = creer_map()
 
 # # ======================
 # # MOBS DE LA MAP (INDÉPENDANTS DES CLASSES)
