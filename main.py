@@ -4,6 +4,10 @@ from core.character import HP_by_class
 from core.map import creer_map, afficher_map, deplacer_joueur
 from render.console import boucle_console
 from spells.mob_spells import poule_attaque, dinde_attaque
+from render.pygame_renderer import run_pygame
+from core.mobs import MOBS_SUR_MAP as MOBS_on_map
+from core.map import creer_map
+
 
 #=====================# CRÉATION DU JOUEUR #======================#
 print("Bonjour, créez votre personnage !") 
@@ -31,5 +35,10 @@ player["pv"] = pve(player["nom"], player["classe"], player["pv"], poule["nom"], 
 dinde = {"nom": "dinde enragée", "pv": 45, "attaque": dinde_attaque}
 player["pv"] = pve(player["nom"], player["classe"], player["pv"], dinde["nom"], dinde["pv"])
 
-#======================# jeu console #======================#
-boucle_console(player)
+# #======================# jeu console #======================#
+# boucle_console(player)
+
+
+#======================# jeu pygame #======================#
+map = creer_map()
+run_pygame(player, map, MOBS_on_map)
