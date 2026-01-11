@@ -1,5 +1,7 @@
-# from core.combat import pve
+from core.combat import pve
 from core.character import choose_race, choose_class, choose_name
+from core.character import HP_by_class
+from spells.mob_spells import poule_attaque
 
 #======================
 #CRÉATION DU JOUEUR
@@ -28,8 +30,8 @@ player_name = choose_name()
 player = {
     "nom": player_name,
     "classe": classe,
-    "pv": HP_PAR_CLASSE[classe],
-    "pv_max": HP_PAR_CLASSE[classe]
+    "pv": HP_by_class[classe],
+    "pv_max": HP_by_class[classe]
 }
 
 # ======================
@@ -37,10 +39,10 @@ player = {
 # ======================
 
 poule = {"nom": "poule sauvage", "pv": 30, "attaque": poule_attaque}
-joueur["pv"] = pve(joueur["nom"], joueur["classe"], joueur["pv"], poule["nom"], poule["pv"])
+player["pv"] = pve(player["nom"], player["classe"], player["pv"], poule["nom"], poule["pv"])
 
 dinde = {"nom": "dinde enragée", "pv": 45, "attaque": poule_attaque}
-joueur["pv"] = pve(joueur["nom"], joueur["classe"], joueur["pv"], dinde["nom"], dinde["pv"])
+player["pv"] = pve(player["nom"], player["classe"], player["pv"], dinde["nom"], dinde["pv"])
 
 
 # from fight import pve

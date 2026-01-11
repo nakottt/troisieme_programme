@@ -8,7 +8,7 @@
 RACES = ["Humain", "Elfe", "Nain", "Gnome", "Worgen", "Drainei"]
 CLASSES = ["Guerrier", "Mage", "Voleur", "Druide", "Chasseur", "Pretre"]
 
-HP_PAR_CLASSE = {
+HP_by_class = {
     "Guerrier": 200,
     "Mage": 100,
     "Voleur": 120,
