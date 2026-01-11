@@ -9,6 +9,7 @@ Troisieme_programme/
 │   ├── combat.py           # pve(), règles de combat
 │   ├── map.py              # map logique (grille, collisions)
 │   ├── mobs.py             # définition des ennemis
+│   ├── charcter.py         # creation du perso
 │
 ├── spells/                 # attaques / sorts
 │   ├── __init__.py

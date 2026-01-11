@@ -1,6 +1,6 @@
 import time
-from spells import poule_attaque
-from spells import classes_attackes
+from spells.mob_spells import poule_attaque
+from spells.player_spells import classes_attackes
 
 
 
